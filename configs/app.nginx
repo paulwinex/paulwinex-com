@@ -1,5 +1,6 @@
 server {
     listen 8000;
+    server_name paulwinex.com;
 
     location /static/ {
       root /var/www/app;
