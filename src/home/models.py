@@ -5,7 +5,6 @@ from wagtail.fields import RichTextField, StreamField
 from wagtail.models import Page
 from wagtail.blocks import CharBlock, RichTextBlock
 from wagtail.images.blocks import ImageChooserBlock
-from blocks.gallery_item import GalleryItemBlock
 
 
 class GalleryItemPage(Page):
@@ -22,7 +21,6 @@ class GalleryItemPage(Page):
         ('heading', CharBlock(classname="full title", icon="title")),
         ('text', RichTextBlock(icon="text")),
         ('image', ImageChooserBlock()),
-        ('gallery_item', GalleryItemBlock()),
     ], blank=True, null=True, use_json_field=True)
 
 
