@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "paulwinex-com"
+version = "0.1.0"
+description = ""
+authors = ["paulwinex <paulwinex@gmail.com>"]
+readme = "README.md"
+packages = [{include = "paulwinex"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+wagtail = "^5.1.1"
+gunicorn = "^21.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

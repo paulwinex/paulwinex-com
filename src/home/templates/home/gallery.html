@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load wagtailimages_tags  %}
+{% load static %}
+
+{% block content %}
+{#{{ page.subtitle }}#}
+    <section class="section site-portfolio">
+      <div class="container">
+
+      <div class="row mb-5 align-items-center">
+          <div class="col-md-12 col-lg-6 mb-4 mb-lg-0">
+            <h2>Hey, I'm Paul</h2>
+            <p class="mb-0">CGI Pipeline Developer</p>
+          </div>
+{#          <div class="col-md-12 col-lg-6 text-start text-lg-end">#}
+{#            <div id="filters" class="filters">#}
+{#              <a href="#" data-filter="*" class="active">All</a>#}
+{#              <a href="#" data-filter=".web">Web</a>#}
+{#              <a href="#" data-filter=".design">Design</a>#}
+{#              <a href="#" data-filter=".branding">Branding</a>#}
+{#              <a href="#" data-filter=".photography">Photography</a>#}
+{#            </div>#}
+{#          </div>#}
+        </div>
+
+        <div id="portfolio-grid" class="row no-gutter">
+          {% for page in self.get_children %}
+            <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">
+            <a href="{{ page.url }}" class="item-wrap fancybox">
+              <div class="work-info">
+                <h3>{{ page.title }}</h3>
+                  {{ page.specific.subtitle }}
+              </div>
+{#                {% image page.image width-400 as img %}#}
+                {% image page.specific.image fill-416x400 as img %}
+              <img class="img-fluid" src="{{ img.url }}">
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+
+{% endblock %}

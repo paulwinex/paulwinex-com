@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load wagtailimages_tags wagtailcore_tags %}
+{% load static %}
+
+{% block content %}
+<section class="section pt-4">
+      <div class="container">
+          <p><a href="/"><i class="bi bi-arrow-left"></i> BACK</a></p>
+          <div class="row mb-4 mt-4 align-items-center">
+          <div class="col-md-6" >
+            <h2>{{ self.title }}</h2>
+            <p>{{ self.subtitle }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-section pb-0">
+        <div class="container">
+          <div class="row align-items-stretch">
+            <div class="col-md-12 align-self-center">
+{#              <img src="{% image self.image original %}" alt="Image" class="img-fluid">#}
+                {% image self.image height-400 class="img-fluid" %}
+            </div>
+            <div class="col-md-12 ml-auto pt-4" >
+                {{ self.specific.content }}
+            </div>
+
+          </div>
+        </div>
+        </div>
+    </section>
+
+{% endblock %}
