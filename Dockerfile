@@ -24,10 +24,10 @@ RUN poetry export -f requirements.txt --output $APP_PATH/requirements.txt --with
 FROM builder-image as production-image
 ENV TZ=Europe/Moscow
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-WORKDIR $APP_PATH
+
 COPY . /app
 COPY --from=builder-image $APP_PATH/requirements.txt $APP_PATH/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r $APP_PATH/requirements.txt
 ENV PYTHONPATH=/app:/app/src
-
-ENTRYPOINT ["/app/start.sh"]
+WORKDIR /app/src
+ENTRYPOINT ["/app/src/start.sh"]
