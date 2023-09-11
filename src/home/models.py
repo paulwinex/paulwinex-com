@@ -5,6 +5,7 @@ from wagtail.fields import RichTextField, StreamField
 from wagtail.models import Page
 from wagtail.blocks import CharBlock, RichTextBlock
 from wagtail.images.blocks import ImageChooserBlock
+from wagtail.embeds.blocks import EmbedBlock
 
 
 class GalleryItemPage(Page):
@@ -18,9 +19,10 @@ class GalleryItemPage(Page):
     subtitle = models.CharField(max_length=256, blank=True, null=True)
     image = models.ForeignKey('wagtailimages.Image', blank=True, null=True, on_delete=models.SET_NULL, related_name='+')
     content = StreamField([
-        ('heading', CharBlock(classname="full title", icon="title")),
+        ('heading', CharBlock(icon="title")),
         ('text', RichTextBlock(icon="text")),
         ('image', ImageChooserBlock()),
+        ('embed', EmbedBlock(max_width=800, max_height=400))
     ], blank=True, null=True, use_json_field=True)
 
 
