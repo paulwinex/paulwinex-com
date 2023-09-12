@@ -18,11 +18,18 @@
         <div class="container">
           <div class="row align-items-stretch">
             <div class="col-md-12 align-self-center">
-{#              <img src="{% image self.image original %}" alt="Image" class="img-fluid">#}
-                {% image self.image height-400 class="img-fluid" %}
+{#                {% image self.image height-400 class="img-fluid" %}#}
             </div>
             <div class="col-md-12 ml-auto pt-4" >
-                {{ self.specific.content }}
+                {% for block in self.specific.content %}
+                    {% if block.block_type == 'image' %}
+                        {% image block.value max-1200x800 class="img-fluid" %}
+                    {% else %}
+                        <section class="block-{{ block.block_type }}">
+                            {% include_block block %}
+                        </section>
+                    {% endif %}
+                {% endfor %}
             </div>
 
           </div>
