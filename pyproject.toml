@@ -10,6 +10,7 @@ packages = [{include = "paulwinex"}]
 python = "^3.11"
 wagtail = "^5.1.1"
 gunicorn = "^21.2.0"
+wagtailcodeblock = "^1.29.0.1"
 
 
 [build-system]

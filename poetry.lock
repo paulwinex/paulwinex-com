@@ -671,6 +671,20 @@ docs = ["Sphinx (>=1.5.2)", "myst-parser (==0.18.1)", "pyenchant (>=3.1.1,<4)", 
 testing = ["Jinja2 (>=3.0,<3.2)", "azure-mgmt-cdn (>=12.0,<13.0)", "azure-mgmt-frontdoor (>=1.0,<1.1)", "black (==22.3.0)", "boto3 (>=1.16,<1.17)", "coverage (>=3.7.0)", "curlylint (==0.13.1)", "django-pattern-library (>=0.7,<0.8)", "djhtml (==1.5.2)", "doc8 (==0.8.1)", "factory-boy (>=3.2)", "freezegun (>=0.3.8)", "polib (>=1.1,<2.0)", "python-dateutil (>=2.7)", "pytz (>=2014.7)", "ruff (==0.0.272)", "semgrep (==1.3.0)"]
 
 [[package]]
+name = "wagtailcodeblock"
+version = "1.29.0.1"
+description = "Wagtail Code Block provides PrismJS syntax highlighting in Wagtail."
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "wagtailcodeblock-1.29.0.1-py3-none-any.whl", hash = "sha256:ed6a6bced7c5e76f55153770d3de323f26e2bbced13f3c300eb91e8418e3524c"},
+    {file = "wagtailcodeblock-1.29.0.1.tar.gz", hash = "sha256:dd833e8c79cf0870ca943ef0feee132b765f863ad2a4face91c66c5e634f04b8"},
+]
+
+[package.dependencies]
+wagtail = ">=4"
+
+[[package]]
 name = "webencodings"
 version = "0.5.1"
 description = "Character encoding aliases for legacy web content"
@@ -705,4 +719,4 @@ testing = ["Pillow (>=9.1.0,<11.0.0)", "Wand (>=0.6,<1.0)", "black (==22.3.0)", 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "9f2530010815662929f50f0cab16b5567834a31fc8e071a4ef24b70597a97fca"
+content-hash = "ff6f228fc9baa0ae30d57425af34687f325ce5f621cc9df50e519ce4d19b2ab8"
