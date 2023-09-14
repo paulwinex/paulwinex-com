@@ -24,6 +24,10 @@
                 {% for block in self.specific.content %}
                     {% if block.block_type == 'image' %}
                         {% image block.value max-1200x800 class="img-fluid pt-2 pb-5" %}
+                    {% elif block.block_type == 'embed'  %}
+                        <div class="embed-responsive embed-responsive-16by9">
+                        {{ block.video }}
+                        </div>
                     {% else %}
                         <section class="block-{{ block.block_type }}">
                             {% include_block block %}
